@@ -9,7 +9,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.weatkertask"
+        applicationId "com.example.weathertask"
         minSdk 23
         targetSdk 31
         versionCode 1
