@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/light_marine"
+    android:background="@drawable/pexels_frederik_s_rensen_2404843"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activity_fragments.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="@color/dark_marine"
+        android:padding="5dp"
+        android:background="@color/marine"
         android:id="@+id/searchConstraintLayout"
         app:layout_constraintTop_toTopOf="parent"
         >

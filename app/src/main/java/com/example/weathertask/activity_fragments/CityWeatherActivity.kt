@@ -19,11 +19,11 @@ class CityWeatherActivity : AppCompatActivity() {
 
     private fun setText() {
         binding.cityTitle.text = weather.cityName
-        Picasso.get().load("https://openweathermap.org/img/wn/${weather.icon}@2x.png").into(binding.weatherIcon)
+        Picasso.get().load("https://openweathermap.org/img/wn/${weather.icon}@2x.png").fit().centerCrop().into(binding.weatherIcon)
         binding.weatherDescription.text = weather.description
         binding.temperatureFellValue.text = weather.tempFell.toString() +" \u2103"
         binding.temperature.text = weather.temp.toString() +" \u2103"
-        binding.presureValue.text = weather.pressure.toString() + " hPa"
+        binding.pressureValue.text = weather.pressure.toString() + " hPa"
         binding.visibilityValue.text = weather.visibility.toString() + " m"
         binding.windSpeedValue.text = weather.windSpeed.toString() +" m/s"
         binding.cloudinessValue.text = weather.cloudiness.toString() + " %"
