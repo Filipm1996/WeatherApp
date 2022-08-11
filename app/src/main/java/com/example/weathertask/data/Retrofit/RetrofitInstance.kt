@@ -12,7 +12,7 @@ class RetrofitInstance @Inject constructor(private val okHttpClient: OkHttpClien
         Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            //.client(okHttpClient.getClient())
+            .client(okHttpClient.getClient())
             .build()
             .create(ApiService::class.java)
 }

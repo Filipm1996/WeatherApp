@@ -22,7 +22,7 @@ class Repository @Inject constructor(private val apiService: ApiService, private
     override suspend fun getCoordinates(cityName : String) : Resource<List<City>>{
         return try {
             val coordinatesResponse : CoordinatesResponse = CoroutineScope(Dispatchers.IO).async {
-                apiService.getCoordinates(cityName,Constants.apiKey)
+                apiService.getCoordinates(cityName)
             }.await()
             val listOfCities = mutableListOf<City>()
             coordinatesResponse.forEach{
@@ -38,7 +38,7 @@ class Repository @Inject constructor(private val apiService: ApiService, private
     override suspend fun getWeatherForCity(lat : Double , lon : Double,cityName: String) : Resource<Weather>{
         return try {
             val currentWeatherResponse : CurrentWeatherResponse = CoroutineScope(Dispatchers.IO).async {
-                apiService.getWeatherForCity(lat, lon,Constants.apiKey)
+                apiService.getWeatherForCity(lat, lon)
             }.await()
             var weather : Weather
             currentWeatherResponse.let {
