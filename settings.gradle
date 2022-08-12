@@ -14,4 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "WeatherTask"
 include ':app'
-include ':shared'
