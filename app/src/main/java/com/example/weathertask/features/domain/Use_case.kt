@@ -1,11 +1,9 @@
 package com.example.weathertask.features.domain
 
-import androidx.lifecycle.LiveData
 import com.example.weathertask.arch.usecase.UseCaseDefault
 import com.example.weathertask.common.Resource
 import com.example.weathertask.data.network.WeatherApiRepositoryDefault
 import com.example.weathertask.data.storage.WeatherDbRepositoryDefault
-import com.example.weathertask.data.storage.entities.CityModel
 import com.example.weathertask.domain.model.City
 import com.example.weathertask.domain.model.Weather
 import javax.inject.Inject

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weathertask.R
-import com.example.weathertask.data.storage.entities.CityModel
 import com.example.weathertask.domain.model.City
 
 class AddCityAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

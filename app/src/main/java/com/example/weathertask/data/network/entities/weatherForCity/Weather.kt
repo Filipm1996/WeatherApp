@@ -1,4 +1,4 @@
-package com.example.weathertask.data.network.entities.WeatherForCity
+package com.example.weathertask.data.network.entities.weatherForCity
 
 data class Weather(
     val description: String,

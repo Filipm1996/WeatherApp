@@ -2,15 +2,13 @@ package com.example.weathertask.data.network
 
 import com.example.weathertask.common.Resource
 import com.example.weathertask.data.network.api.ApiService
-import com.example.weathertask.data.network.entities.Coordinates.CoordinatesResponse
-import com.example.weathertask.data.network.entities.WeatherForCity.CurrentWeatherResponse
-import com.example.weathertask.data.storage.entities.CityModel
+import com.example.weathertask.data.network.entities.coordinates.CoordinatesResponse
+import com.example.weathertask.data.network.entities.weatherForCity.CurrentWeatherResponse
 import com.example.weathertask.domain.model.City
 import com.example.weathertask.domain.model.Weather
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import java.lang.Exception
 import java.math.BigDecimal
 import java.math.RoundingMode
 import javax.inject.Inject

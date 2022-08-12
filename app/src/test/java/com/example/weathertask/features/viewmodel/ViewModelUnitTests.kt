@@ -1,8 +1,7 @@
-package com.example.weathertask.ui
+package com.example.weathertask.features.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.weathertask.data.network.WeatherApiRepositoryDefault
-import com.example.weathertask.features.viewmodel.WeatherViewModel
+import com.example.weathertask.arch.usecase.UseCaseDefault
 import io.mockk.MockKAnnotations
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.Dispatchers
@@ -21,12 +20,12 @@ class ViewModelUnitTests {
     val rule = InstantTaskExecutorRule()
 
     @MockK
-    lateinit var weatherApiRepository: WeatherApiRepositoryDefault
+    lateinit var useCase: UseCaseDefault
 
     @Before
     fun setUp(){
         MockKAnnotations.init(this, relaxUnitFun = true)
-        viewModel = WeatherViewModel(weatherApiRepository)
+        viewModel = WeatherViewModel(useCase)
         Dispatchers.setMain(testDispatcher)
     }
 

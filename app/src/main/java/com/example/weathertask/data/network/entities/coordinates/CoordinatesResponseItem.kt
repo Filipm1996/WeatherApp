@@ -1,4 +1,4 @@
-package com.example.weathertask.data.network.entities.Coordinates
+package com.example.weathertask.data.network.entities.coordinates
 
 data class CoordinatesResponseItem(
     val country: String,

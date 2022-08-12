@@ -10,8 +10,8 @@ import com.example.weathertask.domain.model.Weather
 import com.squareup.picasso.Picasso
 
 class CityWeatherFragment : Fragment() {
-    lateinit var binding : CityWeatherFragmentBinding
-    private lateinit var weather : Weather
+    lateinit var binding: CityWeatherFragmentBinding
+    private lateinit var weather: Weather
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = CityWeatherFragmentBinding.inflate(layoutInflater)
@@ -26,15 +26,17 @@ class CityWeatherFragment : Fragment() {
     ): View {
         return binding.root
     }
+
     private fun setText() {
         binding.cityTitle.text = weather.cityName
-        Picasso.get().load("https://openweathermap.org/img/wn/${weather.icon}@2x.png").fit().centerCrop().into(binding.weatherIcon)
+        Picasso.get().load("https://openweathermap.org/img/wn/${weather.icon}@2x.png").fit()
+            .centerCrop().into(binding.weatherIcon)
         binding.weatherDescription.text = weather.description
-        binding.temperatureFellValue.text = weather.tempFell.toString() +" \u2103"
-        binding.temperature.text = weather.temp.toString() +" \u2103"
+        binding.temperatureFellValue.text = weather.tempFell.toString() + " \u2103"
+        binding.temperature.text = weather.temp.toString() + " \u2103"
         binding.pressureValue.text = weather.pressure.toString() + " hPa"
         binding.visibilityValue.text = weather.visibility.toString() + " m"
-        binding.windSpeedValue.text = weather.windSpeed.toString() +" m/s"
+        binding.windSpeedValue.text = weather.windSpeed.toString() + " m/s"
         binding.cloudinessValue.text = weather.cloudiness.toString() + " %"
         binding.humidityValue.text = weather.humidity.toString() + " %"
     }

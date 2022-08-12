@@ -9,13 +9,13 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class FlowExtensions {
-     companion object {
-         inline fun <reified T> Flow<T>.observeWithLifecycle(
-             lifecycleOwner: LifecycleOwner,
-             minActiveState: Lifecycle.State = Lifecycle.State.STARTED,
-             noinline action: suspend (T) -> Unit
-         ): Job = lifecycleOwner.lifecycleScope.launch {
-             flowWithLifecycle(lifecycleOwner.lifecycle, minActiveState).collect { action(it) }
-         }
-     }
+    companion object {
+        inline fun <reified T> Flow<T>.observeWithLifecycle(
+            lifecycleOwner: LifecycleOwner,
+            minActiveState: Lifecycle.State = Lifecycle.State.STARTED,
+            noinline action: suspend (T) -> Unit
+        ): Job = lifecycleOwner.lifecycleScope.launch {
+            flowWithLifecycle(lifecycleOwner.lifecycle, minActiveState).collect { action(it) }
+        }
+    }
 }

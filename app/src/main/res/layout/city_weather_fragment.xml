@@ -31,21 +31,22 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintEnd_toStartOf="@id/temperature"
+        android:src="@drawable/thermometer"
         app:layout_constraintBottom_toBottomOf="@id/temperature"
-        android:src="@drawable/thermometer"/>
+        app:layout_constraintEnd_toStartOf="@id/temperature" />
+
     <TextView
+        android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/temperature"
         android:layout_marginStart="25dp"
-        app:layout_constraintTop_toBottomOf="@id/weatherIcon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="10dp"
         android:text="temperature"
         android:textColor="@color/white"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weatherIcon" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutForInfo"
@@ -72,9 +73,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/thermometer"
             app:layout_constraintBottom_toBottomOf="@id/temperatureFellTitle"
-            android:src="@drawable/thermometer"/>
+            app:layout_constraintStart_toStartOf="parent" />
+
         <TextView
             android:id="@+id/temperatureFellTitle"
             android:layout_width="wrap_content"
@@ -84,7 +86,7 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/temperatureFeelLikeImage"
-            app:layout_constraintTop_toBottomOf="@id/weatherDescription"  />
+            app:layout_constraintTop_toBottomOf="@id/weatherDescription" />
 
         <TextView
             android:id="@+id/temperatureFellValue"
@@ -102,9 +104,10 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="3dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/resilience"
             app:layout_constraintBottom_toBottomOf="@id/pressureTitle"
-            android:src="@drawable/resilience"/>
+            app:layout_constraintStart_toStartOf="parent" />
+
         <TextView
             android:id="@+id/pressureTitle"
             android:layout_width="wrap_content"
@@ -133,9 +136,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="3dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/visible"
             app:layout_constraintBottom_toBottomOf="@id/VisibilityTitle"
-            android:src="@drawable/visible"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/VisibilityTitle"
@@ -164,9 +167,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="3dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/_16050_wind_icon"
             app:layout_constraintBottom_toBottomOf="@id/windSpeedTitle"
-            android:src="@drawable/_16050_wind_icon"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/windSpeedTitle"
@@ -195,9 +198,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="3dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/_998130_cloud_clouds_cloudy_network_weather_icon"
             app:layout_constraintBottom_toBottomOf="@id/cloudinessTitle"
-            android:src="@drawable/_998130_cloud_clouds_cloudy_network_weather_icon"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/cloudinessTitle"
@@ -225,10 +228,10 @@
             android:id="@+id/humidityImage"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/humidityTitle"
+            android:layout_marginStart="3dp"
             android:src="@drawable/_682839_drop_forecast_humidity_precipitation_rain_icon"
-            android:layout_marginStart="3dp"/>
+            app:layout_constraintBottom_toBottomOf="@id/humidityTitle"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/humidityTitle"

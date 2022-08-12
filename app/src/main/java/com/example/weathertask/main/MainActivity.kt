@@ -3,7 +3,6 @@ package com.example.weathertask.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
 import com.example.weathertask.R
 import com.example.weathertask.arch.base.CityWeatherFragment
 import com.example.weathertask.arch.base.ShowCitiesFragment
@@ -12,7 +11,7 @@ import com.example.weathertask.domain.model.Weather
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), ShowCitiesFragment.OnItemClickListener{
+class MainActivity : AppCompatActivity(), ShowCitiesFragment.OnItemClickListener {
     private lateinit var binding: ActivityMainBinding
     private val showCitiesFragment = ShowCitiesFragment()
     private val cityWeatherFragment = CityWeatherFragment()
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity(), ShowCitiesFragment.OnItemClickListener
         setUpFragment(showCitiesFragment)
     }
 
-    private fun setUpFragment(fragment : Fragment) {
+    private fun setUpFragment(fragment: Fragment) {
         val ft = supportFragmentManager.beginTransaction()
         ft.replace(R.id.fragment_layout, fragment)
         ft.addToBackStack(null)

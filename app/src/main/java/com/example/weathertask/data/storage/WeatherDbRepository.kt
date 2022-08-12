@@ -1,7 +1,6 @@
 package com.example.weathertask.data.storage
 
 import com.example.weathertask.data.storage.dao.CityDao
-import com.example.weathertask.data.storage.entities.CityModel
 import com.example.weathertask.domain.model.City
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
