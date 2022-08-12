@@ -2,14 +2,18 @@ package com.example.weathertask.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.weathertask.data.Retrofit.OkHttpClientClass
-import com.example.weathertask.data.Retrofit.RetrofitInstance
-import com.example.weathertask.data.Retrofit.ServiceInterceptor
-import com.example.weathertask.data.Retrofit.api.ApiService
-import com.example.weathertask.data.db.CityDao
-import com.example.weathertask.data.db.CityDb
-import com.example.weathertask.data.repositories.Repository
-import com.example.weathertask.data.repositories.RepositoryDefault
+import com.example.weathertask.arch.usecase.UseCaseDefault
+import com.example.weathertask.data.network.setup.OkHttpClientClass
+import com.example.weathertask.data.network.setup.RetrofitInstance
+import com.example.weathertask.data.network.setup.ServiceInterceptor
+import com.example.weathertask.data.network.api.ApiService
+import com.example.weathertask.data.storage.dao.CityDao
+import com.example.weathertask.data.storage.CityDb
+import com.example.weathertask.data.network.WeatherApiRepository
+import com.example.weathertask.data.network.WeatherApiRepositoryDefault
+import com.example.weathertask.data.storage.WeatherDbRepository
+import com.example.weathertask.data.storage.WeatherDbRepositoryDefault
+import com.example.weathertask.features.domain.UseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -48,8 +52,7 @@ object Module {
     @Provides
     fun provideRepository(
         apiService: ApiService,
-        cityDao: CityDao
-    ) = Repository(apiService,cityDao) as RepositoryDefault
+    ) = WeatherApiRepository(apiService) as WeatherApiRepositoryDefault
 
     @Singleton
     @Provides
@@ -62,4 +65,17 @@ object Module {
     fun provideCityDao(
         cityDb : CityDb
     ) = cityDb.cityDao()
+
+    @Singleton
+    @Provides
+    fun provideWeatherDbRepository(
+        cityDao: CityDao
+    ) = WeatherDbRepository(cityDao) as WeatherDbRepositoryDefault
+
+    @Singleton
+    @Provides
+    fun provideUseCase(
+        weatherDbRepository: WeatherDbRepositoryDefault,
+        weatherApiRepository: WeatherApiRepositoryDefault
+    ) = UseCase(weatherDbRepository, weatherApiRepository) as UseCaseDefault
 }

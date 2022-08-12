@@ -4,8 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/activity_city_weather.xml" value="0.33" />
-        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/add_city_fragment.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/city_weather_fragment.xml" value="0.14" />
+        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/info_fragment.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/recycler_view_add_city_element.xml" value="0.33" />
+        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/recycler_view_add_city_empty.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/recycler_view_element.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatherTask/app/src/main/res/layout/show_cities_fragment.xml" value="0.18854166666666666" />
         <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatkerTask/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.1945" />
         <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatkerTask/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1965" />
         <entry key="..\:/Users/Filip/Desktop/dev files/Android projects/WeatkerTask/app/src/main/res/layout/activity_city_weather.xml" value="0.18854166666666666" />
