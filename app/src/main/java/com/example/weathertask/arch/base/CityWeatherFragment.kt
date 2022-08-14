@@ -10,7 +10,7 @@ import com.example.weathertask.domain.model.Weather
 import com.squareup.picasso.Picasso
 
 class CityWeatherFragment : Fragment() {
-    lateinit var binding: CityWeatherFragmentBinding
+    private lateinit var binding: CityWeatherFragmentBinding
     private lateinit var weather: Weather
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

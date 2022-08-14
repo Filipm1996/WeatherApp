@@ -28,8 +28,8 @@ class AddCityFragmentDialog : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
-        dialog?.getWindow()
-            ?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog?.window
+            ?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 
     private fun setUpClickListeners() {

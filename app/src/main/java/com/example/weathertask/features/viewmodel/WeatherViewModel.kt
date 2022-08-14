@@ -21,6 +21,7 @@ class WeatherViewModel @Inject constructor(
     private val _actions = Channel<Action>(Channel.BUFFERED)
     val actions = _actions.receiveAsFlow()
     private val errorCollector = MutableLiveData<String?>()
+    private val loadingCollector = MutableLiveData<Boolean>()
 
     fun getCoordinates(cityName: String) {
         viewModelScope.launch {
@@ -40,6 +41,7 @@ class WeatherViewModel @Inject constructor(
     }
 
     fun getWeatherForCities(listOfCities: List<City>) {
+        loadingCollector.postValue(true)
         viewModelScope.launch {
             val listOfWeather = mutableListOf<Weather>()
             listOfCities.forEach { city ->
@@ -48,7 +50,6 @@ class WeatherViewModel @Inject constructor(
                         is Resource.Success -> {
                             val weather = response.data!!
                             listOfWeather.add(weather)
-
                         }
                         is Resource.Error -> {
                             errorCollector.postValue(response.message ?: "Error")
@@ -56,7 +57,10 @@ class WeatherViewModel @Inject constructor(
                     }
                 }
             }
-            _actions.send(Action.GetWeatherForCities(listOfWeather))
+            loadingCollector.postValue(false)
+            if (listOfCities.isNotEmpty()) {
+                _actions.send(Action.GetWeatherForCities(listOfWeather))
+            }
         }
     }
 
@@ -104,6 +108,10 @@ class WeatherViewModel @Inject constructor(
 
     fun clearErrorCollector() {
         errorCollector.value = null
+    }
+
+    fun getLoadingCollector(): MutableLiveData<Boolean> {
+        return loadingCollector
     }
 
     sealed class Action {

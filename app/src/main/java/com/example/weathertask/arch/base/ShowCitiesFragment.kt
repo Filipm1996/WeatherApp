@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ShowCitiesFragment : Fragment() {
     private val adapter = MainAdapter()
-    var someItemClickListener: OnItemClickListener? = null
+    private var someItemClickListener: OnItemClickListener? = null
     private val addAlertDialog = AddCityFragmentDialog()
     private lateinit var binding: ShowCitiesFragmentBinding
     private val viewModel: WeatherViewModel by viewModels()
@@ -30,8 +30,19 @@ class ShowCitiesFragment : Fragment() {
         binding = ShowCitiesFragmentBinding.inflate(layoutInflater)
         someItemClickListener = activity as OnItemClickListener
         getErrorCollector()
+        getLoadingCollector()
         setUpRecyclerView()
         setUpClickListeners()
+    }
+
+    private fun getLoadingCollector() {
+        viewModel.getLoadingCollector().observe(this) {
+            if (it == true) {
+                binding.progressBar.visibility = View.VISIBLE
+            } else {
+                binding.progressBar.visibility = View.INVISIBLE
+            }
+        }
     }
 
     override fun onCreateView(

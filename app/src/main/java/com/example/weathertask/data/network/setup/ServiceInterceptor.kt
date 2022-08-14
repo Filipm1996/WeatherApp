@@ -7,7 +7,7 @@ import okhttp3.Request
 import okhttp3.Response
 
 
-class   ServiceInterceptor() :
+class   ServiceInterceptor :
     Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {

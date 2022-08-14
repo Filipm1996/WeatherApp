@@ -1,7 +1,6 @@
 package com.example.weathertask.arch.usecase
 
 import com.example.weathertask.common.Resource
-import com.example.weathertask.data.storage.entities.CityModel
 import com.example.weathertask.domain.model.City
 import com.example.weathertask.domain.model.Weather
 

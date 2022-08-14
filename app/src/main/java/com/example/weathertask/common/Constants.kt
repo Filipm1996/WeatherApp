@@ -1,8 +1,6 @@
 package com.example.weathertask.common
 
-import com.example.weathertask.BuildConfig
-
 object Constants {
-    val apiKey = BuildConfig.API_KEY
-    val BASE_URL = "https://api.openweathermap.org/"
+    const val apiKey = "b62fc95f54397e0618bcbf04e68356eb"
+    const val BASE_URL = "https://api.openweathermap.org/"
 }
