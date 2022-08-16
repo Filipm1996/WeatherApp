@@ -21,20 +21,20 @@ class CityWeatherDetailsFragment : BaseFragment<FragmentCityWeatherDetailsBindin
             .centerCrop()
             .into(viewBinding.cityWeatherIcon)
         viewBinding.weatherDescription.text = weather.description
-        viewBinding.temperatureFellValue.text =
+        viewBinding.temperatureFeelLikeValue.text =
             resources.getString(R.string.temperature_value, weather.tempFell.toString())
         viewBinding.cityWeatherTemperature.text =
             resources.getString(R.string.temperature_value, weather.temp.toString())
         viewBinding.pressureValue.text =
-            weather.pressure.toString() + resources.getString(R.string.hectopascals)
+            resources.getString(R.string.hectopascals,weather.pressure.toString() )
         viewBinding.visibilityValue.text =
-            weather.visibility.toString() + resources.getString(R.string.meters)
+            resources.getString(R.string.meters,weather.visibility.toString())
         viewBinding.windSpeedValue.text =
-            weather.windSpeed.toString() + resources.getString(R.string.speed)
+            resources.getString(R.string.meters_per_second,weather.windSpeed.toString())
         viewBinding.cloudinessValue.text =
-            weather.cloudiness.toString() + resources.getString(R.string.percent)
+            resources.getString(R.string.percent,weather.cloudiness.toString())
         viewBinding.humidityValue.text =
-            weather.humidity.toString() + resources.getString(R.string.percent)
+            resources.getString(R.string.percent,weather.humidity.toString())
     }
 
     companion object {

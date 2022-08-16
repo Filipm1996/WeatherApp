@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp"
+    android:layout_margin="@dimen/text_size_default"
     app:cardBackgroundColor="@color/marine_transparent"
     app:cardCornerRadius="20dp"
     app:cardElevation="0dp">
@@ -12,15 +12,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
+        android:padding="@dimen/text_size_default">
 
         <TextView
-            android:id="@+id/cityName"
+            android:id="@+id/city_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/city_name"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size_default"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             tools:text="20C"
             android:textColor="@color/white"
-            android:textSize="25sp"
+            android:textSize="@dimen/text_size_default"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

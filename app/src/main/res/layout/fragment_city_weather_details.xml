@@ -17,7 +17,7 @@
             android:layout_marginTop="@dimen/margin_default"
             android:text="@string/city_title"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_header"
+            android:textSize="@dimen/text_size_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +35,7 @@
         <ImageView
             android:layout_width="@dimen/temperature_icon_size"
             android:layout_height="@dimen/temperature_icon_size"
-            android:src="@drawable/thermometer"
+            android:src="@drawable/ic_temperature_svgrepo_com"
             app:layout_constraintBottom_toBottomOf="@id/city_weather_temperature"
             app:layout_constraintEnd_toStartOf="@id/city_weather_temperature" />
 
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_1.5x"
             android:textColor="@color/white"
-            android:textSize="@dimen/text_size_header"
+            android:textSize="@dimen/text_size_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/city_weather_icon"
@@ -68,200 +68,200 @@
                 android:layout_marginEnd="@dimen/margin_default"
                 android:text="@string/weather_description"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_title"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/temperatureFeelLikeImage"
+                android:id="@+id/temperature_feelLike_image"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_0.25x"
-                android:src="@drawable/thermometer"
-                app:layout_constraintBottom_toBottomOf="@id/temperatureFellTitle"
+                android:src="@drawable/ic_temperature_svgrepo_com2"
+                app:layout_constraintBottom_toBottomOf="@id/temperature_felLike_title"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/temperatureFellTitle"
+                android:id="@+id/temperature_felLike_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_0.25x"
                 android:layout_marginTop="@dimen/margin_default"
                 android:text="@string/temperature_feel_like"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@id/temperatureFeelLikeImage"
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintStart_toEndOf="@id/temperature_feelLike_image"
                 app:layout_constraintTop_toBottomOf="@id/weather_description" />
 
             <TextView
-                android:id="@+id/temperatureFellValue"
+                android:id="@+id/temperature_feelLike_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_default"
                 android:layout_marginEnd="@dimen/margin_0.5x"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/weather_description"
                 tools:text="23" />
 
             <ImageView
-                android:id="@+id/pressureImage"
+                android:id="@+id/pressure_image"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="@dimen/margin_0.25x"
-                android:src="@drawable/resilience"
-                app:layout_constraintBottom_toBottomOf="@id/pressureTitle"
+                android:src="@drawable/ic_baseline_compress_24"
+                app:layout_constraintBottom_toBottomOf="@id/pressure_title"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/pressureTitle"
+                android:id="@+id/pressure_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:text="@string/pressure_title"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@id/pressureImage"
-                app:layout_constraintTop_toBottomOf="@id/temperatureFellTitle" />
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintStart_toEndOf="@id/pressure_image"
+                app:layout_constraintTop_toBottomOf="@id/temperature_felLike_title" />
 
             <TextView
-                android:id="@+id/pressureValue"
+                android:id="@+id/pressure_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/temperatureFellValue"
+                app:layout_constraintTop_toBottomOf="@id/temperature_feelLike_value"
                 tools:text="Pressure Value" />
 
 
             <ImageView
-                android:id="@+id/visibilityImage"
+                android:id="@+id/visibility_image"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_0.25x"
-                android:src="@drawable/visible"
+                android:src="@drawable/ic_baseline_remove_red_eye_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/VisibilityTitle" />
+                app:layout_constraintTop_toTopOf="@id/visibility_title" />
 
             <TextView
-                android:id="@+id/VisibilityTitle"
+                android:id="@+id/visibility_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:text="@string/visibility_title"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@id/visibilityImage"
-                app:layout_constraintTop_toBottomOf="@id/pressureTitle" />
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintStart_toEndOf="@id/visibility_image"
+                app:layout_constraintTop_toBottomOf="@id/pressure_title" />
 
             <TextView
-                android:id="@+id/visibilityValue"
+                android:id="@+id/visibility_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 tools:text="Visibility Value"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pressureValue" />
+                app:layout_constraintTop_toBottomOf="@id/pressure_value" />
 
             <ImageView
-                android:id="@+id/windSpeedImage"
+                android:id="@+id/wind_speed_image"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_0.25x"
-                android:src="@drawable/_16050_wind_icon"
+                android:src="@drawable/ic_baseline_speed_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/windSpeedTitle" />
+                app:layout_constraintTop_toTopOf="@id/wind_speed_title" />
 
             <TextView
-                android:id="@+id/windSpeedTitle"
+                android:id="@+id/wind_speed_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:text="@string/wind_speed_title"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@id/windSpeedImage"
-                app:layout_constraintTop_toBottomOf="@id/VisibilityTitle" />
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintStart_toEndOf="@id/wind_speed_image"
+                app:layout_constraintTop_toBottomOf="@id/visibility_title" />
 
             <TextView
-                android:id="@+id/windSpeedValue"
+                android:id="@+id/wind_speed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/visibilityValue"
+                app:layout_constraintTop_toBottomOf="@id/visibility_value"
                 tools:text="Wind Speed Value" />
 
             <ImageView
-                android:id="@+id/cloudinessImage"
+                android:id="@+id/cloudiness_image"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_0.25x"
-                android:src="@drawable/_998130_cloud_clouds_cloudy_network_weather_icon"
+                android:src="@drawable/ic_baseline_cloud_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/cloudinessTitle" />
+                app:layout_constraintTop_toTopOf="@id/cloudiness_title" />
 
             <TextView
-                android:id="@+id/cloudinessTitle"
+                android:id="@+id/cloudiness_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:text="@string/cloudiness_title"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toEndOf="@id/cloudinessImage"
-                app:layout_constraintTop_toBottomOf="@id/windSpeedTitle" />
+                android:textSize="@dimen/text_size_default"
+                app:layout_constraintStart_toEndOf="@id/cloudiness_image"
+                app:layout_constraintTop_toBottomOf="@id/wind_speed_title" />
 
             <TextView
-                android:id="@+id/cloudinessValue"
+                android:id="@+id/cloudiness_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/windSpeedValue"
+                app:layout_constraintTop_toBottomOf="@id/wind_speed_value"
                 tools:text="Cloudiness Value" />
 
             <ImageView
-                android:id="@+id/humidityImage"
+                android:id="@+id/humidity_image"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_0.25x"
-                android:src="@drawable/_682839_drop_forecast_humidity_precipitation_rain_icon"
+                android:src="@drawable/ic_baseline_water_drop_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/humidityTitle" />
+                app:layout_constraintTop_toTopOf="@id/humidity_title" />
 
             <TextView
-                android:id="@+id/humidityTitle"
+                android:id="@+id/humidity_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:text="@string/humidity_title"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cloudinessImage"
-                app:layout_constraintTop_toBottomOf="@id/cloudinessTitle" />
+                app:layout_constraintStart_toEndOf="@id/cloudiness_image"
+                app:layout_constraintTop_toBottomOf="@id/cloudiness_title" />
 
             <TextView
-                android:id="@+id/humidityValue"
+                android:id="@+id/humidity_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_default"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cloudinessValue"
+                app:layout_constraintTop_toBottomOf="@id/cloudiness_value"
                 tools:text="humidity Value" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

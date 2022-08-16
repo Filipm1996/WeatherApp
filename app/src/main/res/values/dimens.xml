@@ -13,10 +13,13 @@
     <dimen name="weather_icon_size">150dp</dimen>
     <dimen name="temperature_icon_size">52dp</dimen>
 
-    <dimen name="text_size_default">16sp</dimen>
-    <dimen name="text_size_title">24sp</dimen>
-    <dimen name="text_size_header">40sp</dimen>
+    <dimen name="text_size_small">16sp</dimen>
+    <dimen name="text_size_default">24sp</dimen>
+    <dimen name="text_size_title">40sp</dimen>
     
     <dimen name="icon_width">30dp</dimen>
     <dimen name="icon_height">30dp</dimen>
+
+    <dimen name="progress_bar_width">100dp</dimen>
+    <dimen name="progress_bar_height">100dp</dimen>
 </resources>

@@ -66,7 +66,7 @@ class AddCityAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     inner class AddCityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val cityName: TextView = itemView.findViewById(R.id.cityName)
+        val cityName: TextView = itemView.findViewById(R.id.city_name)
         val country: TextView = itemView.findViewById(R.id.country)
     }
 

@@ -7,10 +7,10 @@
     <string name="city_already_added_error">City is already added</string>
     <string name="write_city_name">"Please write city name"</string>
     <string name="temperature_value">"%1$s \u2103"</string>
-    <string name="hectopascals">" hPa"</string>
-    <string name="meters">" m"</string>
-    <string name="speed">" m/s"</string>
-    <string name="percent">" %"</string>
+    <string name="hectopascals">"%1$s hPa"</string>
+    <string name="meters">"%1$s m"</string>
+    <string name="meters_per_second">"%1$s m/s"</string>
+    <string name="percent">"%1$s %%"</string>
     <string name="city_not_found">City not found</string>
     <string name="city_name">City name</string>
     <string name="country">Country</string>

@@ -12,7 +12,7 @@
         android:layout_margin="@dimen/margin_default"
         android:text="@string/add_city_header"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size_title"
+        android:textSize="@dimen/text_size_default"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

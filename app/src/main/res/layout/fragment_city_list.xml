@@ -9,10 +9,10 @@
     tools:context=".main.MainActivity">
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/progress_bar"
         style="?android:attr/progressBarStyleLarge"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/progress_bar_width"
+        android:layout_height="@dimen/progress_bar_height"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/searchConstraintLayout"
+        android:id="@+id/search_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/marine"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/searchText"
+            android:id="@+id/search_text"
             android:layout_width="@dimen/match_constraints"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_0.25x"
@@ -41,12 +41,12 @@
             android:inputType="text"
             android:padding="@dimen/margin_0.5x"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toStartOf="@id/searchButton"
+            app:layout_constraintEnd_toStartOf="@id/search_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/searchButton"
+            android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/marine"
@@ -57,10 +57,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewForCities"
+        android:id="@+id/recycler_view_for_cities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
-        app:layout_constraintTop_toBottomOf="@id/searchConstraintLayout" />
+        android:paddingBottom="@dimen/margin_4x"
+        app:layout_constraintTop_toBottomOf="@id/search_constraint_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
