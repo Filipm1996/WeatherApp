@@ -7,6 +7,7 @@ import com.example.weathertask.domain.model.City
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
+import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -39,7 +40,6 @@ class InsertCityUseCaseTest {
     fun `retrun false if isCityAlreadyAdded returned true`() = runTest {
         /* Given */
         coEvery { weatherDbRepository.isCityAlreadyAdded(any(), any()) } returns true
-        val city = mock(City::class.java)
 
         /* When */
         val result = insertCityUseCase.run(city)
@@ -52,12 +52,15 @@ class InsertCityUseCaseTest {
     fun `retrun true if isCityAlreadyAdded returned false`() = runTest {
         /* Given */
         coEvery { weatherDbRepository.isCityAlreadyAdded(any(), any()) } returns false
-        val city = mock(City::class.java)
 
         /* When */
         val result = insertCityUseCase.run(city)
 
         /* Then */
         assertEquals(true, result)
+    }
+
+    companion object {
+        private val city = mock(City::class.java)
     }
 }

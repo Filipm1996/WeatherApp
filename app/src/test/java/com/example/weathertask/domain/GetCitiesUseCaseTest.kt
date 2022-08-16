@@ -40,7 +40,7 @@ class GetCitiesUseCaseTest {
     fun `run return success response from getCities`() = runTest {
         /* Given */
         val city = mock(City::class.java)
-        val response = Resource.Success<List<City>>(listOf(city))
+        val response = Resource.Success(listOf(city))
         coEvery { weatherApiRepository.getCities(any()) } returns response
 
         /* When */

@@ -47,7 +47,7 @@ class GetWeatherForCitiesUseCaseTest {
         val city = City(2.0, 2.0, "name", "GB")
         val weather = mock(Weather::class.java)
         val cityList = listOf(city)
-        val successResource = Resource.Success<Weather>(weather)
+        val successResource = Resource.Success(weather)
         coEvery { weatherDbRepository.getCities() } returns cityList
         coEvery {
             getWeatherForCityUseCase.run(
@@ -64,7 +64,7 @@ class GetWeatherForCitiesUseCaseTest {
 
         /* Then */
         assertEquals(
-            Resource.Success<List<Weather>>(listOf(weather)),
+            Resource.Success(listOf(weather)),
             result
         )
     }

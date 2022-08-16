@@ -42,7 +42,7 @@ class GetWeatherForCityUseCaseTest {
         /* Given */
         val city = City(2.0, 2.0, "name", "GB")
         val weather = mock(Weather::class.java)
-        val successResponse = Resource.Success<Weather>(weather)
+        val successResponse = Resource.Success(weather)
         coEvery {
             weatherApiRepository.getWeatherForCity(
                 city.lat,

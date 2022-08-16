@@ -16,7 +16,6 @@ import com.example.weathertask.features.citylist.viewmodel.CityListViewModel
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
-import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
@@ -66,7 +65,6 @@ class CityListViewModelTest {
     @Test
     fun `get success response from getCities send cities to channel`() = runTest {
         /* Given */
-        val city = mock(City::class.java)
         val successResource = Resource.Success<List<City>>(listOf(city))
         coEvery { getCitiesUseCase.run(any()) } returns successResource
 
@@ -104,7 +102,7 @@ class CityListViewModelTest {
     @Test
     fun `get success response from getWeatherForCities send list to channel`() = runTest {
         /* Given */
-        val weatherList = listOf(mockk<Weather>())
+        val weatherList = listOf(weather)
         val successResource = Resource.Success(weatherList)
         coEvery { getWeatherForCitiesUseCase.run(Unit) } returns (successResource)
 
@@ -140,7 +138,6 @@ class CityListViewModelTest {
     @Test
     fun `insertCity send Success to channel and get weather for city`() = runTest {
         /* Given */
-        val weather = mock(Weather::class.java)
         val city = City(2.0, 2.0, "name", "GB")
         val successResource = Resource.Success<Weather>(weather)
         coEvery { insertCityUseCase.run(any()) } returns true
@@ -172,7 +169,6 @@ class CityListViewModelTest {
     @Test
     fun `insertCity send Error to channel`() = runTest {
         /* Given */
-        val weather = mock(Weather::class.java)
         val city = City(2.0, 2.0, "name", "GB")
         val successResource = Resource.Success<Weather>(weather)
         coEvery { insertCityUseCase.run(any()) } returns false
@@ -225,5 +221,10 @@ class CityListViewModelTest {
             )
             assertEquals(CityListViewModel.Action.ShowError("Error"), awaitItem())
         }
+    }
+
+    companion object {
+        private val weather = mock(Weather::class.java)
+        private val city = mock(City::class.java)
     }
 }
