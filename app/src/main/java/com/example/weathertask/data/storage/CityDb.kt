@@ -6,12 +6,10 @@ import com.example.weathertask.data.storage.dao.CityDao
 import com.example.weathertask.data.storage.entities.CityModel
 
 @Database(
-    entities =[CityModel::class],
-    version = 2
+    entities = [CityModel::class],
+    version = 1
 )
-
 abstract class CityDb : RoomDatabase() {
 
     abstract fun cityDao(): CityDao
-
 }

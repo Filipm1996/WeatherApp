@@ -1,3 +1,25 @@
 <resources>
+
     <string name="app_name">WeatherTask</string>
+
+    <string name="add_city_header">Click city to add</string>
+    <string name="city_title">City</string>
+    <string name="city_already_added_error">City is already added</string>
+    <string name="write_city_name">"Please write city name"</string>
+    <string name="temperature_value">"%1$s \u2103"</string>
+    <string name="hectopascals">" hPa"</string>
+    <string name="meters">" m"</string>
+    <string name="speed">" m/s"</string>
+    <string name="percent">" %"</string>
+    <string name="city_not_found">City not found</string>
+    <string name="city_name">City name</string>
+    <string name="country">Country</string>
+    <string name="search_city">Search city</string>
+    <string name="temperature_feel_like">Temperature feel-like</string>
+    <string name="pressure_title">Pressure</string>
+    <string name="visibility_title">Visibility</string>
+    <string name="wind_speed_title">Wind Speed</string>
+    <string name="cloudiness_title">Cloudiness</string>
+    <string name="humidity_title">Humidity</string>
+    <string name="weather_description">Weather Description</string>
 </resources>

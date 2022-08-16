@@ -8,6 +8,7 @@ import com.example.weathertask.data.storage.entities.CityModel
 
 @Dao
 interface CityDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCity(cityModel: CityModel)
 
@@ -15,8 +16,8 @@ interface CityDao {
     suspend fun getAllCities(): List<CityModel>
 
     @Query("DELETE FROM citymodel WHERE name= :name")
-    fun deleteCityByName (name : String)
+    suspend fun deleteCityByName(name: String)
 
-    @Query("SELECT EXISTS (SELECT 1 FROM citymodel WHERE name = :cityName)")
-    suspend fun exists(cityName: String): Boolean
+    @Query("SELECT EXISTS (SELECT 1 FROM citymodel WHERE lat = :lat AND lon = :lon)")
+    suspend fun exists(lat: Double, lon: Double): Boolean
 }

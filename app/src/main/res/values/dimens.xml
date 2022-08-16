@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="match_constraints">0dp</dimen>
+
+    <dimen name="margin_0.25x">4dp</dimen>
+    <dimen name="margin_0.5x">8dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_1.5x">24dp</dimen>
+    <dimen name="margin_2x">32dp</dimen>
+    <dimen name="margin_4x">64dp</dimen>
+
+    <dimen name="weather_icon_size">150dp</dimen>
+    <dimen name="temperature_icon_size">52dp</dimen>
+
+    <dimen name="text_size_default">16sp</dimen>
+    <dimen name="text_size_title">24sp</dimen>
+    <dimen name="text_size_header">40sp</dimen>
+    
+    <dimen name="icon_width">30dp</dimen>
+    <dimen name="icon_height">30dp</dimen>
+</resources>

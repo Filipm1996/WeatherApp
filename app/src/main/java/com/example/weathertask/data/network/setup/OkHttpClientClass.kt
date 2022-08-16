@@ -7,9 +7,9 @@ class OkHttpClientClass @Inject constructor(
     private val serviceInterceptor: ServiceInterceptor
 ) : OkHttpClient() {
 
-    fun getClient() : OkHttpClient {
+    fun getClient(): OkHttpClient {
         return Builder()
-            .addInterceptor(serviceInterceptor).build()
+            .addInterceptor(serviceInterceptor)
+            .build()
     }
-
 }
