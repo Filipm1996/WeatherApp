@@ -14,7 +14,7 @@
             android:id="@+id/city_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/margin_default"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_title"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,14 +26,15 @@
             android:id="@+id/recycler_for_days"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
             app:layout_constraintTop_toBottomOf="@id/city_name" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_for_hourly_weather"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="60dp"
+            android:layout_marginTop="@dimen/margin_0.5x"
+            android:paddingBottom="@dimen/margin_4x"
             app:layout_constraintTop_toBottomOf="@id/recycler_for_days" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

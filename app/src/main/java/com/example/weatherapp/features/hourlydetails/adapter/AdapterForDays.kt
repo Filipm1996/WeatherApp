@@ -10,13 +10,13 @@ import java.time.format.DateTimeFormatter
 
 class AdapterForDays : RecyclerView.Adapter<AdapterForDays.DaysViewHolder>() {
 
-    private lateinit var dayClicked : ((LocalDateTime) -> Unit)
+    private lateinit var dayClicked: ((LocalDateTime) -> Unit)
     var listOfDays = mutableListOf<LocalDateTime>()
 
     inner class DaysViewHolder(
         viewBinding: DaysItemBinding
     ) : RecyclerView.ViewHolder(viewBinding.root) {
-        val button  = viewBinding.daysButton
+        val button = viewBinding.daysButton
     }
 
     override fun onCreateViewHolder(
@@ -24,9 +24,9 @@ class AdapterForDays : RecyclerView.Adapter<AdapterForDays.DaysViewHolder>() {
         viewType: Int
     ): AdapterForDays.DaysViewHolder {
         val viewBinding = DaysItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-        parent,
-        false
+            LayoutInflater.from(parent.context),
+            parent,
+            false
         )
         return DaysViewHolder(viewBinding)
     }
@@ -43,20 +43,21 @@ class AdapterForDays : RecyclerView.Adapter<AdapterForDays.DaysViewHolder>() {
         return listOfDays.size
     }
 
-    fun updateList(list : List<HourlyWeather>){
+    fun updateList(list: List<HourlyWeather>) {
         val firstDayString = list.first().timestamp
         val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-        val firstDayDate = LocalDateTime.parse(firstDayString,formatter)
+        val firstDayDate = LocalDateTime.parse(firstDayString, formatter)
+        dayClicked.invoke(firstDayDate)
         listOfDays.add(firstDayDate)
         var dayToAdd = firstDayDate
-        for(i in 1..4){
+        for (i in 1..4) {
             dayToAdd = dayToAdd.plusDays(1)
             listOfDays.add(dayToAdd)
         }
         notifyDataSetChanged()
     }
 
-    fun setOnDayClickedListener(callback : (LocalDateTime) -> Unit){
+    fun setOnDayClickedListener(callback: (LocalDateTime) -> Unit) {
         this.dayClicked = callback
     }
 }

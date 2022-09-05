@@ -1,6 +1,8 @@
 package com.example.weatherapp.data.network.entities.weather.hourly
 
 import com.example.weatherapp.domain.model.HourlyWeather
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 data class Item (
     val clouds: Clouds,
@@ -22,8 +24,8 @@ data class Item (
             visibility,
             wind.speed,
             clouds.all,
-            main.feels_like,
-            main.temp,
+            BigDecimal(main.temp).setScale(0, RoundingMode.HALF_DOWN).toInt(),
+            BigDecimal(main.feels_like).setScale(0, RoundingMode.HALF_DOWN).toInt(),
             main.pressure,
             main.humidity,
             dt_txt

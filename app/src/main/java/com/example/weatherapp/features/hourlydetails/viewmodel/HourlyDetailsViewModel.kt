@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.weatherapp.common.Resource
 import com.example.weatherapp.domain.GetHourlyWeatherUseCase
-import com.example.weatherapp.domain.model.City
 import com.example.weatherapp.domain.model.HourlyWeather
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
