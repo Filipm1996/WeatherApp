@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="marine">#4BA2CA</color>
     <color name="light_marine">#87CAE8</color>
+    <color name="light_marine_transparent">#9B87CAE8</color>
     <color name="dark_marine">#3D82A1</color>
     <color name="dark_marine_transparent">#9B3D82A1</color>
     <color name="marine_transparent">#9B4BA2CA</color>

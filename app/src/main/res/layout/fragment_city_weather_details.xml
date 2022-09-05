@@ -10,6 +10,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+        <Button
+            android:id="@+id/hourly_weather_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1.5x"
+            android:text="@string/hourly_weather_button"
+            android:padding="@dimen/margin_0.5x"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/hourly_button"
+            app:layout_constraintEnd_toEndOf="@id/guideline6"
+            app:layout_constraintTop_toBottomOf="@id/city_weather_details_container"/>
+
+        <Button
+            android:id="@+id/day16_weather_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1.5x"
+            android:text="@string/polution"
+            android:padding="@dimen/margin_0.5x"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/hourly_button"
+            app:layout_constraintStart_toEndOf="@id/guideline6"
+            app:layout_constraintTop_toBottomOf="@id/city_weather_details_container"/>
+
         <TextView
             android:id="@+id/city_weather_title"
             android:layout_width="wrap_content"
@@ -163,11 +188,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_0.5x"
-                tools:text="Visibility Value"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_default"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pressure_value" />
+                app:layout_constraintTop_toBottomOf="@id/pressure_value"
+                tools:text="Visibility Value" />
 
             <ImageView
                 android:id="@+id/wind_speed_image"
@@ -263,8 +288,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cloudiness_value"
                 tools:text="humidity Value" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

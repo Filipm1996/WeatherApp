@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">WeatherTask</string>
+    <string name="app_name">WeatherApp</string>
 
     <string name="add_city_header">Click city to add</string>
     <string name="city_title">City</string>
@@ -22,4 +22,6 @@
     <string name="cloudiness_title">Cloudiness</string>
     <string name="humidity_title">Humidity</string>
     <string name="weather_description">Weather Description</string>
+    <string name="hourly_weather_button">3 hours weather</string>
+    <string name="polution">Polution indicators</string>
 </resources>
