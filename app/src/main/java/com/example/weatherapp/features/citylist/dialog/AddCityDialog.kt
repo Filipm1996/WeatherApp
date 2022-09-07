@@ -15,7 +15,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class AddCityDialog : DialogFragment() {
 
     private lateinit var binding: FragmentAddCityBinding
-
     private lateinit var adapter: AddCityAdapter
     private lateinit var onItemClick: ((City) -> Unit)
 
@@ -24,7 +23,7 @@ class AddCityDialog : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = FragmentAddCityBinding.inflate(layoutInflater)
-        hideCityTitleIfNeeded()
+        hideCityTitle()
         setUpRecyclerView()
         setUpClickListeners()
     }
@@ -61,7 +60,7 @@ class AddCityDialog : DialogFragment() {
         this.listOfCities = list.toMutableList()
     }
 
-    private fun hideCityTitleIfNeeded() {
+    private fun hideCityTitle() {
         if (listOfCities.isEmpty()) {
             binding.addCityTitle.visibility = View.GONE
         }

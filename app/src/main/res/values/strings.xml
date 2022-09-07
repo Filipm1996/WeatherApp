@@ -15,7 +15,7 @@
     <string name="city_name">City name</string>
     <string name="country">Country</string>
     <string name="search_city">Search city</string>
-    <string name="temperature_feel_like">Temperature feel-like</string>
+    <string name="temperature_feel_like">Feel-like</string>
     <string name="pressure_title">Pressure</string>
     <string name="visibility_title">Visibility</string>
     <string name="wind_speed_title">Wind Speed</string>

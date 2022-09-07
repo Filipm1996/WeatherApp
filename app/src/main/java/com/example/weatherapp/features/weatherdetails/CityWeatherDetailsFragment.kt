@@ -1,16 +1,22 @@
 package com.example.weatherapp.features.weatherdetails
 
 import android.os.Bundle
+import androidx.fragment.app.viewModels
 import com.example.weatherapp.R
 import com.example.weatherapp.arch.BaseFragment
 import com.example.weatherapp.databinding.FragmentCityWeatherDetailsBinding
 import com.example.weatherapp.domain.model.Weather
 import com.example.weatherapp.features.hourlydetails.HourlyDetailsFragment
+import com.example.weatherapp.features.hourlydetails.viewmodel.HourlyDetailsViewModel
+import com.example.weatherapp.features.weatherdetails.viewmodel.CityWeatherDetailsViewModel
+import com.example.weatherapp.utils.Constants.WEATHER_HOST_URL
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class CityWeatherDetailsFragment : BaseFragment<FragmentCityWeatherDetailsBinding>() {
 
+    private val viewModel: CityWeatherDetailsViewModel by viewModels()
     private lateinit var weather: Weather
     override fun constructViewBinding(): FragmentCityWeatherDetailsBinding =
         FragmentCityWeatherDetailsBinding.inflate(layoutInflater)
@@ -55,7 +61,6 @@ class CityWeatherDetailsFragment : BaseFragment<FragmentCityWeatherDetailsBindin
     companion object {
 
         private const val HOURLY_DETAILS_FRAGMENT_TAG = "HOURLY_DETAILS_FRAGMENT_TAG"
-        private const val WEATHER_HOST_URL = "https://openweathermap.org/img/wn/"
         private const val WEATHER_KEY = "WEATHER_KEY"
 
         fun createInstance(weather: Weather): CityWeatherDetailsFragment =

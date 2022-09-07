@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.databinding.OneDayWeatherItemBinding
 import com.example.weatherapp.domain.model.HourlyWeather
+import com.example.weatherapp.utils.Constants
+import com.squareup.picasso.Picasso
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -19,6 +21,7 @@ class AdapterForWeather : RecyclerView.Adapter<AdapterForWeather.WeatherViewHold
     ) : RecyclerView.ViewHolder(viewBinding.root) {
         val hour = viewBinding.hour
         val temperature = viewBinding.temperatureForHour
+        val icon = viewBinding.weatherIcon
     }
 
     override fun onCreateViewHolder(
@@ -38,6 +41,11 @@ class AdapterForWeather : RecyclerView.Adapter<AdapterForWeather.WeatherViewHold
         val item = listOfWeather[position]
         val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
         val hourToShow = LocalDateTime.parse(item.timestamp, formatter).hour
+        Picasso.get()
+            .load("${Constants.WEATHER_HOST_URL}${item.icon}@2x.png")
+            .fit()
+            .centerCrop()
+            .into(holder.icon)
         holder.hour.text = "$hourToShow:00"
         holder.temperature.text = "${item.temp} \u2103"
         holder.itemView.setOnClickListener {

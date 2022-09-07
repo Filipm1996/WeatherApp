@@ -3,6 +3,7 @@ package com.example.weatherapp.data.network
 import com.example.weatherapp.common.Resource
 import com.example.weatherapp.domain.model.City
 import com.example.weatherapp.domain.model.HourlyWeather
+import com.example.weatherapp.domain.model.PolutionDetails
 import com.example.weatherapp.domain.model.Weather
 
 interface WeatherApiRepository {
@@ -20,4 +21,11 @@ interface WeatherApiRepository {
         lon: Double,
         cityName: String
     ): Resource<List<HourlyWeather>>
+
+    suspend fun getPolutionDetails(
+        lat: Double,
+        lon: Double,
+        start: String,
+        end : String
+    ) : Resource<PolutionDetails>
 }

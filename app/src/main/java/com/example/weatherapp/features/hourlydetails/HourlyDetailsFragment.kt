@@ -7,9 +7,11 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.weatherapp.arch.BaseFragment
 import com.example.weatherapp.databinding.FragmentHourlyDetailsBinding
+import com.example.weatherapp.domain.model.HourlyWeather
 import com.example.weatherapp.domain.model.Weather
 import com.example.weatherapp.features.hourlydetails.adapter.AdapterForDays
 import com.example.weatherapp.features.hourlydetails.adapter.AdapterForWeather
+import com.example.weatherapp.features.hourlydetails.dialog.HourlyWeatherDialog
 import com.example.weatherapp.features.hourlydetails.viewmodel.HourlyDetailsViewModel
 import com.example.weatherapp.utils.observeWithLifecycle
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,9 +46,16 @@ class HourlyDetailsFragment : BaseFragment<FragmentHourlyDetailsBinding>() {
         adapterForWeather = AdapterForWeather()
         getViewBinding().recyclerViewForHourlyWeather.layoutManager = LinearLayoutManager(requireContext())
         getViewBinding().recyclerViewForHourlyWeather.adapter = adapterForWeather
-        adapterForWeather.setOnHourClickListener {
-
+        adapterForWeather.setOnHourClickListener { hourlyWeather ->
+            setUpDialogFragment(hourlyWeather)
         }
+    }
+
+    private fun setUpDialogFragment(hourlyWeather : HourlyWeather) {
+        val dialog = HourlyWeatherDialog ()
+        dialog.show(parentFragmentManager, WEATHER_KEY)
+        dialog.updateWeather(hourlyWeather)
+
     }
 
     private fun observeActions() {
@@ -66,7 +75,7 @@ class HourlyDetailsFragment : BaseFragment<FragmentHourlyDetailsBinding>() {
     }
 
     companion object {
-        private const val WEATHER_KEY = "WEATHER_KEY"
+        private const val WEATHER_KEY = "HOUR_WEATHER_KEY"
 
         fun createInstance(weather: Weather): HourlyDetailsFragment =
             HourlyDetailsFragment()

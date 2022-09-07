@@ -3,11 +3,14 @@ package com.example.weatherapp.features.citylist.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
 import com.example.weatherapp.databinding.CityWeatherItemBinding
 import com.example.weatherapp.domain.model.Weather
+import com.example.weatherapp.utils.Constants
+import com.squareup.picasso.Picasso
 
 class CityListAdapter : RecyclerView.Adapter<CityListAdapter.CityItemViewHolder>() {
 
@@ -25,6 +28,11 @@ class CityListAdapter : RecyclerView.Adapter<CityListAdapter.CityItemViewHolder>
 
     override fun onBindViewHolder(holder: CityItemViewHolder, position: Int) {
         val element = weatherList[position]
+        Picasso.get()
+            .load("${Constants.WEATHER_HOST_URL}${element?.icon}@2x.png")
+            .fit()
+            .centerCrop()
+            .into(holder.icon)
         holder.cityName.text = element.cityName
         holder.temperature.text = holder.itemView.context.resources
             .getString(R.string.temperature_value, element.temp.toString())
@@ -59,6 +67,7 @@ class CityListAdapter : RecyclerView.Adapter<CityListAdapter.CityItemViewHolder>
     inner class CityItemViewHolder(
         viewBinding: CityWeatherItemBinding
     ) : RecyclerView.ViewHolder(viewBinding.root) {
+        val icon : ImageView = viewBinding.icon
         val cityName: TextView = viewBinding.cityName
         val temperature: TextView = viewBinding.cityWeatherTemperature
     }
