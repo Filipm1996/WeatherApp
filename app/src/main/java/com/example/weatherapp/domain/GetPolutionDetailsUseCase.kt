@@ -14,9 +14,7 @@ class GetPolutionDetailsUseCase @Inject constructor(
         val polutionDetails =
             weatherApiRepositoryImpl.getPolutionDetails(
                 input[0] as Double,
-                input[1] as Double,
-                input[2] as String,
-                input[3] as String
+                input[1] as Double
             )
 
         return when (polutionDetails) {

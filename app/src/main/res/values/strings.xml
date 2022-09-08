@@ -24,4 +24,5 @@
     <string name="weather_description">Weather Description</string>
     <string name="hourly_weather_button">3 hours weather</string>
     <string name="polution">Polution indicators</string>
+    <string name="polution_details">Polution details</string>
 </resources>

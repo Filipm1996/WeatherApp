@@ -50,14 +50,13 @@ class WeatherApiRepositoryImpl @Inject constructor(
 
     override suspend fun getPolutionDetails(
         lat: Double,
-        lon: Double,
-        start: String,
-        end: String
+        lon: Double
     ): Resource<PolutionDetails> {
         return try {
-            val result = apiService.getPolutionDetails(lat, lon,start,end)
+            val result = apiService.getPolutionDetails(lat, lon)
             Resource.Success(result.list[0].map())
         } catch (e: Exception) {
+            println(e.message)
             Resource.Error(e.message.orErrorText())
         }
     }

@@ -24,8 +24,6 @@ interface WeatherApiRepository {
 
     suspend fun getPolutionDetails(
         lat: Double,
-        lon: Double,
-        start: String,
-        end : String
+        lon: Double
     ) : Resource<PolutionDetails>
 }

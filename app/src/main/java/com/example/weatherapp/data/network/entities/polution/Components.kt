@@ -3,7 +3,7 @@ package com.example.weatherapp.data.network.entities.polution
 data class Components(
     val co: Double,
     val nh3: Double,
-    val no: Double,
+    val no: Int,
     val no2: Double,
     val o3: Double,
     val pm10: Double,
